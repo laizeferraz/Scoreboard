@@ -1,3 +1,4 @@
+import React from "react";
 import { Counter } from "./Counter";
 
 export const Player = (props) => {
@@ -12,7 +13,11 @@ export const Player = (props) => {
         </button>
         {props.name}
       </span>
-      <Counter score={props.score} />
+      <Counter
+        score={props.score}
+        changeScore={props.changeScore}
+        index={props.index}
+      />
     </div>
   );
 };
