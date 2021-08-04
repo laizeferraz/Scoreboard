@@ -2,13 +2,21 @@ import { useState } from "react";
 
 export const Counter = () => {
   const [score, setScore] = useState(0);
+  // console.log(score);
 
   function decrementScore() {
+    //console.log(score);
     // console.log("Hi, from inside incrementScore!");
-    setScore((prevScore) => prevScore - 1);
+    setScore((prevScore) => {
+      console.log(prevScore);
+      return prevScore - 1;
+    });
+
+    // console.log(score);
   }
 
   function incrementScore() {
+    // console.log(score);
     // console.log("Hi, from inside incrementScore!");
     setScore((prevScore) => prevScore + 1);
   }
