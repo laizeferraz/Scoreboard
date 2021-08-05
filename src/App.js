@@ -31,8 +31,10 @@ export const App = () => {
   ]);
 
   function handleScoreChange(index, delta) {
+    // let playerIndex = players[index]
     setScore((players[index].score += delta));
     // console.log("index:" + index, "delta: " + delta);
+    // setScore(prevScore => prevScore.playerIndex.score) += delta)
   }
 
   function handleAddPlayer(name) {

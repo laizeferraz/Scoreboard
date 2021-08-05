@@ -170,7 +170,7 @@ svg {
 .stopwatch {
   padding: 15px 10px 5px 10px;
   margin: -5px -10px -5px 10px;
-  background: #5b45b9;
+  background: #28a57f;
 }
 
 .stopwatch-time {
@@ -181,7 +181,7 @@ svg {
 
 .stopwatch button {
   margin: 8px 5px;
-  background-color: #44338d;
+  background-color: #208465;
   border-radius: 5px;
   padding: 7px 8px;
   border: none;
@@ -195,7 +195,7 @@ svg {
 .stopwatch button:hover,
 input[type="submit"]:hover {
   background: #fff;
-  color: #44338d;
+  color: #0382a3;
   cursor: pointer;
 }
 
