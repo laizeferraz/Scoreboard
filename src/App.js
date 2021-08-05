@@ -1,38 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { Header } from "./components/Header";
 import { Player } from "./components/Player";
-import { useState } from "react";
 
 import { AddPlayerForm } from "./components/AddPlayerForm";
 
 export const App = () => {
-  const [score, setScore] = useState();
+  const [score, setScore] = useState(0);
   const [players, setPlayers] = useState([
     {
       name: "Guil",
-      score: 0,
+      score: score,
       id: 1
     },
     {
       name: "Treasure",
-      score: 0,
+      score: score,
       id: 2
     },
     {
       name: "Ashley",
-      score: 0,
+      score: score,
       id: 3
     },
     {
       name: "James",
-      score: 0,
+      score: score,
       id: 4
     }
   ]);
-  // generate players ID
-
-  let prevPlayerId = 4;
 
   function handleScoreChange(index, delta) {
     setScore((players[index].score += delta));
@@ -40,11 +36,14 @@ export const App = () => {
   }
 
   function handleAddPlayer(name) {
-    setPlayers(...players, {
-      name,
-      score: 0,
-      id: prevPlayerId++
-    });
+    setPlayers((prevPlayers) => [
+      ...prevPlayers,
+      {
+        name,
+        score,
+        id: players.length + 1
+      }
+    ]);
   }
 
   function handleRemovePlayer(id) {
@@ -64,7 +63,7 @@ export const App = () => {
           removePlayer={handleRemovePlayer}
         />
       ))}
-      <AddPlayerForm addPlayer={handleAddPlayer} />
+      <AddPlayerForm score={score} addPlayer={handleAddPlayer} />
     </div>
   );
 };
